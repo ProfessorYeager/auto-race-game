@@ -10,8 +10,11 @@
     --card-hover: rgba(255, 255, 255, 0.15);
 }
 
-html {
-    height: 100%;
+html,
+body {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
     overflow-y: auto;
 }
 
@@ -26,12 +29,9 @@ body {
     background: var(--bg-gradient);
     background-attachment: fixed;
     color: var(--text-main);
-    min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    overflow-y: auto;
-    overflow-x: hidden;
 }
 
 .game-container {
@@ -48,9 +48,9 @@ body {
 .screen {
     display: none;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    padding: 1rem;
+    padding: 1rem 1rem 3rem;
     width: 100%;
     opacity: 0;
     transition: opacity 0.4s ease;
@@ -59,8 +59,6 @@ body {
 .screen.active {
     display: flex;
     opacity: 1;
-    flex-grow: 1;
-    min-height: 100svh;
 }
 
 .hidden {
