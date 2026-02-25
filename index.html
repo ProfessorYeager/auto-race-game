@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Race: Speed Math!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-container">
+        <!-- Intro Screen -->
+        <div id="screen-intro" class="screen active">
+            <div class="glass-panel text-center">
+                <h1 class="bounce-in">🏎️ Auto Race Math! 🏁</h1>
+                <p class="subtitle fade-in">Let's learn about cars and math!</p>
+                <div class="explanation-box slide-up">
+                    <div class="stat-explainer">
+                        <span class="stat-icon">🔥</span>
+                        <h3>Horsepower (HP)</h3>
+                        <p>How fast the car can run when it's zooming top speed!</p>
+                    </div>
+                    <div class="stat-explainer">
+                        <span class="stat-icon">💪</span>
+                        <h3>Torque (TQ)</h3>
+                        <p>How strong the car is to push forward super quick when it starts!</p>
+                    </div>
+                </div>
+
+                <div class="instructions-box slide-up"
+                    style="margin-bottom: 2.5rem; background: rgba(255, 255, 255, 0.1); border: 2px solid var(--secondary); padding: 1.5rem; border-radius: 16px;">
+                    <h3 style="color: var(--secondary); margin-bottom: 0.5rem; font-size: 1.5rem;">How to win! 🏆</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.5;">To figure out the winner, add the <strong>Horsepower
+                            (HP)</strong> and <strong>Torque (TQ)</strong> together!<br>This gives us the <strong>Total
+                            Power</strong>. The higher number wins the race!</p>
+                </div>
+
+                <button id="btn-start" class="btn-primary pulse">Let's Race! 🚦</button>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="screen-game" class="screen hidden">
+            <div class="score-board glass-panel-sm">
+                Score: <span id="score">0</span>
+            </div>
+            <h2 class="prompt-text">Which car will win a race?</h2>
+
+            <div class="cards-container">
+                <!-- Car A -->
+                <button class="car-card glass-panel" id="car-a-card">
+                    <img src="" alt="Car A" class="car-image">
+                    <h3 id="car-a-name" class="car-name">Ford Mustang</h3>
+                    <div class="car-stats">
+                        <div class="stat-pill"><span class="stat-icon">🔥</span> <span id="car-a-hp">450</span> HP</div>
+                        <div class="stat-pill"><span class="stat-icon">💪</span> <span id="car-a-tq">410</span> TQ</div>
+                    </div>
+                </button>
+
+                <!-- VS Badge -->
+                <div class="vs-badge floating">VS</div>
+
+                <!-- Car B -->
+                <button class="car-card glass-panel" id="car-b-card">
+                    <img src="" alt="Car B" class="car-image">
+                    <h3 id="car-b-name" class="car-name">Chevy Camaro</h3>
+                    <div class="car-stats">
+                        <div class="stat-pill"><span class="stat-icon">🔥</span> <span id="car-b-hp">455</span> HP</div>
+                        <div class="stat-pill"><span class="stat-icon">💪</span> <span id="car-b-tq">455</span> TQ</div>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="screen-result" class="screen hidden">
+            <div class="glass-panel text-center result-panel">
+                <h1 id="result-title" class="pop-in">You got it! 🎉</h1>
+
+                <div id="winner-reveal" class="winner-reveal">
+                    <!-- Dynamic Content -->
+                    <img src="" alt="Winner Car" class="car-image-result">
+                    <h2 id="winner-name">Chevy Camaro</h2>
+                </div>
+
+                <div class="math-explanation">
+                    <p id="math-breakdown">
+                        Mustang: 450 + 410 = <strong>860 Power Score</strong><br>
+                        Camaro: 455 + 455 = <strong>910 Power Score</strong><br>
+                        <br>
+                        <span class="highlight">910 is greater than 860!</span>
+                    </p>
+                </div>
+
+                <button id="btn-next" class="btn-primary">Next Race! 🏁</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
